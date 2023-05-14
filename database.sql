@@ -79,3 +79,13 @@ VALUES
 (12,6), (12,3),           -- Social Net
 (13,6), (13,10), (13,1),  -- Titanic
 (14,1), (14,2), (14,4);   -- Toy Story
+
+
+
+--SQL FOR DATA ABS
+SELECT movies.title, movies.poster, movies.description, genres.name
+	FROM genres
+		JOIN movies_genres
+			ON movies_genres.genre_id = genres.id
+		JOIN movies
+			ON movies_genres.movie_id = movies.id;
