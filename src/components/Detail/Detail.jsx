@@ -10,7 +10,7 @@ function Detail(){
 
     useEffect(() => {
         dispatch({ type: 'FETCH_DETAIL' });
-        console.log('fetch detail useEffect working!');
+        // console.log('fetch detail useEffect working!'); -is fetching!
     }, []);
 
     return (
