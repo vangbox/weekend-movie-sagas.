@@ -14,13 +14,11 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
-    // yield takeEvery('FETCH_DETAIL', fetchDetail);
-    // yield takeEvery('SAVE_MOVIE_ID', saveMovieId);
     yield takeEvery('FETCH_GENRES', fetchGenres)
 }
 
+// get all movies from the DB
 function* fetchAllMovies() {
-    // get all movies from the DB
     try {
         const movies = yield axios.get('/api/movie');
         console.log('get all:', movies.data);
@@ -31,29 +29,7 @@ function* fetchAllMovies() {
     }
         
 }
-
-// function* fetchDetail(action){
-//     //get detail for movies clicked
-//     try{
-//         const detail = yield axios.get(`/api/detail${action.payload}`);
-//         console.log('get all:', detail.data);
-//         yield put({ type: 'SET_MOVIES', payload: detail.data})
-//     } catch {
-//         console.log('get all error from fetchDetail!!');
-//     }
-// }
-
-// function* saveMovieId(action){
-//     try {
-//         const movieId = yield axios.get(`/api/detail/${action.payload}`);
-//         console.log('get all:', movieId.data);
-//         yield put({ type: 'SET_MOVIE_ID', payload: movieId.data });
-
-//     } catch {
-//         console.log('get all error fromo saveMovieId');
-//     }
-// }
-
+// Fetch the genres in database by id
 function* fetchGenres(action){
     try {
         const genres = yield axios.get(`/api/genre/${action.payload}`);
@@ -77,7 +53,7 @@ const movies = (state = [], action) => {
     }
 }
 
-// Used to store the movie genres
+// Used to store the movie genres 
 const genres = (state = [], action) => {
     switch (action.type) {
         case 'SET_GENRES':
@@ -97,15 +73,6 @@ const detail = (state = [], action) =>{
     }
 }
 
-// used to store the movie id when clicked
-const saveMovieIdRedux = (state = 0, action) =>{
-    switch (action.type){
-        case 'SET_MOVIE_ID' :
-            return action.payload
-        default:
-            return state;
-    }
-}
 
 // Create one store that all components can use
 const storeInstance = createStore(
@@ -113,7 +80,6 @@ const storeInstance = createStore(
         movies,
         genres,
         detail,
-        saveMovieIdRedux
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),

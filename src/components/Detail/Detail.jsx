@@ -5,16 +5,10 @@ import MovieList from '../MovieList/MovieList';
 
 function Detail(){
 
-    const dispatch = useDispatch();
     const detail = useSelector(store => store.detail);
     const genres = useSelector(store => store.genres);
     
 
-    // useEffect(() => {
-    //     dispatch({ type: 'FETCH_DETAIL', payload: saveMovieIdRedux });
-        
-    //     // console.log('fetch detail useEffect working!'); -is fetching!
-    // }, []);
 
     
     return (
