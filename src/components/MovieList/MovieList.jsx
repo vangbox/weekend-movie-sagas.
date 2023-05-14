@@ -17,8 +17,8 @@ function MovieList() {
   
     const detailPage = (movie, movieId) =>{ 
 
-        dispatch({ type: 'SET_DETAIL', payload: {movie}})
-        dispatch ({type: 'FETCH_GENRES', payload: {movieId}})
+        dispatch({ type: 'SET_DETAIL', payload: movie})
+        dispatch ({type: 'FETCH_GENRES', payload: movieId })
 
         let page = '/detail'; 
         history.push(page);

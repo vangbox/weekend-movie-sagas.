@@ -4,6 +4,7 @@ const pool = require('../modules/pool')
 
 router.get('/:id', (req, res) => {
     const detailId = req.params.id;
+    console.log('get detail router req.id', req.params.id);
     const sqlText = 
     `
     SELECT movies.id, movies.title, movies.poster, movies.description

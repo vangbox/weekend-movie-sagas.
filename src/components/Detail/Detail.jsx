@@ -20,13 +20,14 @@ function Detail(){
     return (
         <main>
             <h1>Detail Page</h1>
-            <div> <img src={detail.poster} alt={detail.title}></img></div>
+            <div> <img src={detail.poster} alt={detail.title}></img>
+            <h3>{detail.description}</h3>
+            </div>
             <section>
-                {genres.map(genres => {
-                    return (<div>
-                        <li key={genres.id}> {genres.genre_name}</li>
-                            
-                        </div>
+
+                {genres.map(genre => {
+                    return (
+                        <li key={genre.id}> {genre.genre_name}</li>  
                     );
                 
                 })}
