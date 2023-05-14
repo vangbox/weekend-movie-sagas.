@@ -83,7 +83,7 @@ VALUES
 
 
 --SQL FOR DATA ABS
-SELECT movies.title, movies.poster, movies.description, genres.name
+SELECT movies.id, movies.title, movies.poster, movies.description, genres.name
 	FROM genres
 		JOIN movies_genres
 			ON movies_genres.genre_id = genres.id
