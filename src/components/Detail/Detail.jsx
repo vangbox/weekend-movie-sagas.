@@ -11,18 +11,21 @@ function Detail(){
     return (
         <main>
             <h1>Detail Page</h1>
-            <div> <img src={detail.poster} alt={detail.title}></img>
-            <h3>{detail.description}</h3>
-            </div>
-            <section>
 
+            <div> 
+                <img src={detail.poster} alt={detail.title}></img>
+            </div>
+
+            <section>
                 {genres.map(genre => {
                     return (
                         <li key={genre.id}> {genre.genre_name}</li>  
                     );
-                
                 })}
             </section>
+
+            <h3>{detail.description}</h3>
+
             <footer>
                 <h3><Link to ='/'> Back to List </Link></h3>
             </footer>

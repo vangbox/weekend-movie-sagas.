@@ -26,9 +26,9 @@ function* fetchAllMovies() {
 
     } catch {
         console.log('get all error fetchAllMovies');
-    }
-        
+    }   
 }
+
 // Fetch the genres in database by id
 function* fetchGenres(action){
     try {
@@ -40,6 +40,7 @@ function* fetchGenres(action){
         console.log('get all error fromo fetchGenres');
     }
 }
+
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 

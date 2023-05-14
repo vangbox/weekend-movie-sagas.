@@ -23,11 +23,11 @@ function MovieList() {
         history.push(page);
         // console.log('this is the movie id', movieId); -got id for movie
     }
-
+  
     return (
         <main>
             <h1>MovieList</h1>
-            <section className="movies" >
+            <section className="movies">
                 {movies.map(movie => {
                     return (
                         <div key={movie.id} >
