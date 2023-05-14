@@ -83,9 +83,10 @@ VALUES
 
 
 --SQL FOR DATA ABS
-SELECT movies.id, movies.title, movies.poster, movies.description, genres.name
+SELECT movies.id, movies.title, movies.poster, movies.description\
 	FROM genres
 		JOIN movies_genres
 			ON movies_genres.genre_id = genres.id
 		JOIN movies
-			ON movies_genres.movie_id = movies.id;
+			ON movies_genres.movie_id = movies.id
+    WHERE movies_genres.movie_id= $1;
