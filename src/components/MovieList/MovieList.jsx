@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import './MovieList.css'
 
+
 function MovieList() {
 
     const history = useHistory();
@@ -16,8 +17,8 @@ function MovieList() {
     
     const detailPage = (movie, movieId) =>{ 
 
-        dispatch({ type: 'SET_DETAIL', payload: movie})
-        dispatch ({type: 'FETCH_GENRES', payload: movieId })
+        dispatch ({ type: 'SET_DETAIL', payload: movie })
+        dispatch ({ type: 'FETCH_GENRES', payload: movieId })
 
         let page = '/detail'; 
         history.push(page);
@@ -26,19 +27,21 @@ function MovieList() {
   
     return (
         <main>
-            <h1>MovieList</h1>
-            <section className="movies">
+            <h1 className='title'> MovieList </h1>
+            <section className="card">
                 {movies.map(movie => {
                     return (
+                        
                         <div key={movie.id} >
-                            <h3>{movie.title}</h3>
+                            <h3 className='title'>{movie.title}</h3>
                             {/* movie poster click --> /details */}
                             <img 
                             src={movie.poster} 
                             alt={movie.title} 
                             onClick= {() => {detailPage(movie, movie.id)}}/>
-                            
                         </div>
+                         
+                            
                     );
                 })}
             </section>

@@ -10,13 +10,14 @@ function Detail(){
     
     return (
         <main>
-            <h1>Detail Page</h1>
+            
 
-            <div> 
+            <div className='title'> 
+                <h1>{detail.title}</h1>
                 <img src={detail.poster} alt={detail.title}></img>
             </div>
 
-            <section>
+            <section className='title'>
                 {genres.map(genre => {
                     return (
                         <li key={genre.id}> {genre.genre_name}</li>  
@@ -24,7 +25,7 @@ function Detail(){
                 })}
             </section>
 
-            <h3>{detail.description}</h3>
+            <h3 className='genre'>{detail.description}</h3>
 
             <footer>
                 <h3><Link to ='/'> Back to List </Link></h3>
