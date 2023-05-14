@@ -1,15 +1,12 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
-import MovieList from '../MovieList/MovieList';
+import React from 'react';
+import {useSelector } from 'react-redux';
+import {Link} from 'react-router-dom';
+
 
 function Detail(){
 
     const detail = useSelector(store => store.detail);
     const genres = useSelector(store => store.genres);
-    
-
-
     
     return (
         <main>

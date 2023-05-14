@@ -14,7 +14,6 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
     
-  
     const detailPage = (movie, movieId) =>{ 
 
         dispatch({ type: 'SET_DETAIL', payload: movie})
